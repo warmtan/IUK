@@ -4,7 +4,7 @@
 #include <rbdl/urdfreader.h>
 #include <stdio.h>
 
-#define THIS_COM "/home/ytw/rbdl_using/urdf/"
+#define THIS_COM "/home/robotflow/IUK/rbdl_using/urdf/"
 
 using namespace RigidBodyDynamics;
 using namespace RigidBodyDynamics::Math;

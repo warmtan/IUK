@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/rbdltest.dir/MAIN.cpp.o  -o rbdltest  libRobotModel.a libRBDL.a libURDF.a libCOMMON.a 

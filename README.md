@@ -1,4 +1,4 @@
-# Rbdl_examples_code  
+# IUK  
 mkdir build && cd build  
 cmake .. && make  
 ./rbdltest  

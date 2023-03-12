@@ -1,0 +1,2 @@
+/usr/bin/ar qc libRobotModel.a  CMakeFiles/RobotModel.dir/model/DynModel.cpp.o CMakeFiles/RobotModel.dir/model/KinModel.cpp.o CMakeFiles/RobotModel.dir/model/RobotModel.cpp.o
+/usr/bin/ranlib libRobotModel.a
