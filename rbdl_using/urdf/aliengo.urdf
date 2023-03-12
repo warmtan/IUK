@@ -51,6 +51,7 @@
     <parent link="base"/>
     <child link="trunk"/>
   </joint> -->
+  <!-- /home/robotflow/IUK/rbdl_using/urdf/meshes -->
   <link name="trunk">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
