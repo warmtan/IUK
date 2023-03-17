@@ -8,7 +8,8 @@ struct modelStateData{
 
 int main(void) {
 	RobotModel* _model = new RobotModel();
-	//_model->PrintLinkList();
+	// cout << _model << endl;
+	// _model->PrintLinkList();
 	struct modelStateData _state = {
 		VectorXd::Zero(robot::num_q), 
 		VectorXd::Zero(robot::num_qdot)

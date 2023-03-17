@@ -1,3 +1,13 @@
 {
-    "ros.distro": "foxy"
+    "ros.distro": "foxy",
+    "files.associations": {
+        "*.md": "markdown",
+        "cstdlib": "cpp",
+        "ostream": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "string_view": "cpp",
+        "utility": "cpp",
+        "iostream": "cpp"
+    }
 }

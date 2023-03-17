@@ -176,9 +176,15 @@ rbdl/rbdl_config.h
 rbdl/rbdl_math.h
 -
 
-/home/robotflow/IUK/rbdl_test/model/KinModel.cpp
-KinModel.hpp
-/home/robotflow/IUK/rbdl_test/model/KinModel.hpp
+../lib/rbdl/urdfreader.h
+rbdl/rbdl_config.h
+-
+
+/home/robotflow/IUK/rbdl_test/model/DynModel.hpp
+common_utils/common.hpp
+/home/robotflow/IUK/rbdl_test/model/common_utils/common.hpp
+rbdl/rbdl.h
+-
 
 /home/robotflow/IUK/rbdl_test/model/KinModel.hpp
 RobotDefinition.hpp
@@ -191,6 +197,24 @@ iostream
 /home/robotflow/IUK/rbdl_test/model/RobotDefinition.hpp
 common_utils/common.hpp
 /home/robotflow/IUK/rbdl_test/model/common_utils/common.hpp
+
+/home/robotflow/IUK/rbdl_test/model/RobotModel.cpp
+RobotModel.hpp
+/home/robotflow/IUK/rbdl_test/model/RobotModel.hpp
+DynModel.hpp
+/home/robotflow/IUK/rbdl_test/model/DynModel.hpp
+KinModel.hpp
+/home/robotflow/IUK/rbdl_test/model/KinModel.hpp
+rbdl/urdfreader.h
+-
+stdio.h
+-
+
+/home/robotflow/IUK/rbdl_test/model/RobotModel.hpp
+rbdl/rbdl.h
+-
+RobotDefinition.hpp
+/home/robotflow/IUK/rbdl_test/model/RobotDefinition.hpp
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

@@ -75,3 +75,8 @@
                     //according to this function, to know the number of each joint
                     void PrintLinkList();
                     unsigned int FindLinkId(const char* link_name);
+
+# Eigen库学习
+
+    在Eigen，所有的矩阵和向量都是Matrix模板类的对象  [2,2] 行列
+    VectorXd的 [2] 列

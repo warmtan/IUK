@@ -366,10 +366,6 @@ rbdl/Model.h
 rbdl/Kinematics.h
 /home/robotflow/IUK/rbdl_test/lib/rbdl/rbdl/Kinematics.h
 
-/home/robotflow/IUK/rbdl_test/lib/rbdl/Logging.cc
-rbdl/Logging.h
-/home/robotflow/IUK/rbdl_test/lib/rbdl/rbdl/Logging.h
-
 /home/robotflow/IUK/rbdl_test/lib/rbdl/Model.cc
 iostream
 -
@@ -416,18 +412,6 @@ rbdl/Kinematics.h
 sstream
 -
 iomanip
--
-
-/home/robotflow/IUK/rbdl_test/lib/rbdl/rbdl_version.cc
-rbdl/rbdl_config.h
--
-iostream
--
-sstream
--
-string
--
-cstdlib
 -
 
 /home/robotflow/IUK/rbdl_test/lib/rbdl/urdfreader.cc

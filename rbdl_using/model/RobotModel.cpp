@@ -9,6 +9,8 @@
 using namespace RigidBodyDynamics;
 using namespace RigidBodyDynamics::Math;
 
+// 构造函数 它会在每次创建类的新对象时执行
+// 可以用来初始化一些值
 RobotModel::RobotModel(){
   model_ = new Model();
   rbdl_check_api_version (RBDL_API_VERSION);
@@ -18,13 +20,13 @@ RobotModel::RobotModel(){
     std::cerr << "Error loading model aliengo.urdf" << std::endl;
     abort();
   }
-
+  //  std::cerr << model_ ->PrintLinkList()<< std::endl;
   dyn_model_ = new DynModel(model_);
   kin_model_ = new KinModel(model_);
 
   printf("[Aliengo Model] Contructed\n");
 }
-
+// 析构函数 它会在每次删除所创建的对象时执行
 RobotModel::~RobotModel(){
   delete dyn_model_;
   delete kin_model_;

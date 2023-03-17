@@ -10,7 +10,7 @@ public:
     DynModel(RigidBodyDynamics::Model* model);
     ~DynModel(void);
 
-    bool getMassInertia(MatrixXd & a);
+    bool getMassInertia(MatrixXd & a); //获取质量惯性
     bool getInverseMassInertia(MatrixXd & ainv);
     bool getGravity(VectorXd &  grav);
     bool getCoriolis(VectorXd & coriolis);

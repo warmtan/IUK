@@ -180,11 +180,19 @@ rbdl/rbdl_math.h
 rbdl/rbdl_config.h
 -
 
+/home/robotflow/IUK/rbdl_using/model/DynModel.cpp
+DynModel.hpp
+/home/robotflow/IUK/rbdl_using/model/DynModel.hpp
+
 /home/robotflow/IUK/rbdl_using/model/DynModel.hpp
 common_utils/common.hpp
 /home/robotflow/IUK/rbdl_using/model/common_utils/common.hpp
 rbdl/rbdl.h
 -
+
+/home/robotflow/IUK/rbdl_using/model/KinModel.cpp
+KinModel.hpp
+/home/robotflow/IUK/rbdl_using/model/KinModel.hpp
 
 /home/robotflow/IUK/rbdl_using/model/KinModel.hpp
 RobotDefinition.hpp
