@@ -1,5 +1,6 @@
 #include "KinModel.hpp"
 #include <iostream>
+#include <vector>
 using namespace RigidBodyDynamics::Math;
 using namespace RigidBodyDynamics;
 
@@ -32,6 +33,16 @@ void KinModel::UpdateKinematics(const VectorXd & q,
         const VectorXd & qdot){
     _UpdateCentroidFrame(q, qdot);
 }
+// ik
+bool KinModel::IK(const VectorNd &  Qinit_num,
+const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > & body_point_num,
+const std::vector< Vector3d > & target_pos_num,VectorNd & Qres_num ){
+    return InverseKinematics(*model_,Qinit_num,body_id_num,body_point_num, target_pos_num,Qres_num);
+
+}
+
+
+
 /********mainly reference to "Dynamic behaviors on the NAO robot with closed-loop 
          whole body operational space control" by Donghyun Kim**************************/
 //主要参考《闭环NAO机器人动态行为》全身操作空间控制“，作者：金东贤

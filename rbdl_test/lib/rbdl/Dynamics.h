@@ -20,31 +20,27 @@ namespace RigidBodyDynamics {
 
 struct Model;
 
-/** \page dynamics_page Dynamics  动态页面
- * 与运动学相关的所有功能都在
+/** \page dynamics_page Dynamics
+ *
  * All functions related to kinematics are specified in the \ref
- * dynamics_group "Dynamics Module". 动态模块
+ * dynamics_group "Dynamics Module".
  *
  * \defgroup dynamics_group Dynamics
  * @{
  */
 
-/** \brief 
- * 使用牛顿-欧拉算法计算逆动力学
- * Computes inverse dynamics with the Newton-Euler Algorithm
- *  使用牛顿-欧拉算法计算逆动力学 
- *  此函数从给定的广义计算广义力
- *  状态、速度和加速度：
+/** \brief Computes inverse dynamics with the Newton-Euler Algorithm
+ *
  * This function computes the generalized forces from given generalized
  * states, velocities, and accelerations:
  *   \f$ \tau = M(q) \ddot{q} + N(q, \dot{q}) \f$
  *
- * \param model rigid body model 刚体模型
- * \param Q     state vector of the internal joints 内关节的状态向量
- * \param QDot  velocity vector of the internal joints 内关节的速度矢量
- * \param QDDot accelerations of the internals joints 内件接头的加速度
- * \param Tau   actuations of the internal joints (output) 内接头致动（输出）
- * \param f_ext External forces acting on the body in base coordinates (optional, defaults to NULL) 作用在基本坐标中的实体上的外力（可选，默认为 NULL）
+ * \param model rigid body model
+ * \param Q     state vector of the internal joints
+ * \param QDot  velocity vector of the internal joints
+ * \param QDDot accelerations of the internals joints
+ * \param Tau   actuations of the internal joints (output)
+ * \param f_ext External forces acting on the body in base coordinates (optional, defaults to NULL)
  */
 RBDL_DLLAPI void InverseDynamics (
     Model &model,

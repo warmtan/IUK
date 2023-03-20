@@ -4,6 +4,8 @@
 #include <rbdl/rbdl.h>
 #include "RobotDefinition.hpp"
 
+using namespace RigidBodyDynamics::Math;
+
 class DynModel;
 class KinModel;
 
@@ -53,6 +55,11 @@ public:
      void getWorld2BodyMatrix(Mat3 & _World2Body); //获取世界to身体的旋转矩阵
 
      void UpdateSystem(const VectorXd & q, const VectorXd & qdot);  //更新系统 主要功能
+
+    //  RBDL IK
+     void RbdlIK(const VectorXd &  Qinit_num,
+     const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > body_point_num,
+     const std::vector< Vector3d > target_pos_num,VectorXd & Qres_num);
     //according to this function, to know the number of each joint
      void PrintLinkList(); //获取link数量 从而获取关节数量
      unsigned int FindLinkId(const char* link_name); //获取link的id

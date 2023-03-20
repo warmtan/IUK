@@ -48,6 +48,9 @@ public:
      void getWorld2BodyMatrix(Mat3 & _World2Body);
 
      void UpdateSystem(const VectorXd & q, const VectorXd & qdot);
+
+     bool InverseKinematics();
+
     //according to this function, to know the number of each joint
      void PrintLinkList();
      unsigned int FindLinkId(const char* link_name);

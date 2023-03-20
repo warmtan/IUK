@@ -215,6 +215,9 @@ Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 //Dependencies for the target
 RBDL_LIB_DEPENDS:STATIC=general;URDF;general;COMMON;
 
+//No help, variable specified on the command line.
+RBDL_USE_SIMPLE_MATH:UNINITIALIZED=TRUE
+
 //Dependencies for the target
 RobotModel_LIB_DEPENDS:STATIC=general;RBDL;
 

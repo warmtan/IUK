@@ -5,6 +5,8 @@
 #include <rbdl/rbdl.h>
 #include <iostream>
 
+using namespace RigidBodyDynamics::Math;
+
 class KinModel{
     public:
         KinModel(RigidBodyDynamics::Model* model);
@@ -29,6 +31,10 @@ class KinModel{
 
         // 更运动学 主要功能
         void UpdateKinematics(const VectorXd & q, const VectorXd & qdot);
+        // ik求解
+        bool IK(const VectorNd&  Qinit_num,
+        const std::vector< unsigned int > & body_id_num, std::vector<Vector3d >& body_point_num,
+        const std::vector< Vector3d > & target_pos_num,VectorNd & Qres_num );
 
         unsigned int _find_body_idx(int id) const;
         unsigned int find_body_id(const char* link_name) const;

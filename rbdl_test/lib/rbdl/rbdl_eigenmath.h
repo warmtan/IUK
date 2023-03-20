@@ -4,7 +4,6 @@
  *
  * Licensed under the zlib license. See LICENSE for more details.
  */
-
 #ifndef RBDL_EIGENMATH_H
 #define RBDL_EIGENMATH_H
 

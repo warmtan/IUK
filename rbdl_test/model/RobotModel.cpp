@@ -52,6 +52,14 @@ void RobotModel::UpdateSystem(const VectorXd & q,
   kin_model_->UpdateKinematics(q, qdot);
 }
 
+// RBDL IK
+void RobotModel::RbdlIK(const VectorXd &  Qinit_num,
+const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > body_point_num,
+const std::vector< Vector3d > target_pos_num,VectorXd & Qres_num ){
+  kin_model_->IK(Qinit_num,body_id_num, body_point_num,target_pos_num,Qres_num);
+  // return false;
+}
+
 // 
 void RobotModel::getCentroidInertia(MatrixXd & Icent) const {
   kin_model_->getCentroidInertia(Icent);

@@ -95,5 +95,8 @@ int main(void) {
 	cout << "gravity\n";
 		cout << G.transpose() << endl;
 
+	// Vec3 a;
+	// _model ->getPos(0,a);
+
 	return 0;
 }
