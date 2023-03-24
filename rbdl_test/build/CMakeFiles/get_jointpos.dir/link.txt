@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/get_jointpos.dir/test_get_jointpos.cpp.o  -o get_jointpos  libRobotModel.a libRBDL.a libURDF.a libCOMMON.a 

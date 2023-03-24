@@ -1,7 +1,7 @@
 #ifndef ROBOT_MODEL
 #define ROBOT_MODEL
 
-#include <rbdl/rbdl.h>
+#include  <rbdl/rbdl.h>
 #include "RobotDefinition.hpp"
 
 using namespace RigidBodyDynamics::Math;
@@ -41,7 +41,7 @@ public:
     void getCentroidInertia_dwl(const VectorXd & q, MatrixXd & Icent);
 
 
-     void getCoMPosition(Vec3 & com_pos) const;  //更新坐标！吗
+     void getCoMPosition(Vec3 & com_pos) const;  //质量重心吗
      void getCoMVelocity(Vec3 & com_vel) const;  // 不清楚
      void getPos(int link_id, Vec3 & pos) const;  //获取link 坐标  
      void getOri(int link_id, Vec3 & rpy) const;  // 获取link 的 rpy
@@ -57,7 +57,7 @@ public:
      void UpdateSystem(const VectorXd & q, const VectorXd & qdot);  //更新系统 主要功能
 
     //  RBDL IK
-     void RbdlIK(const VectorXd &  Qinit_num,
+     bool RbdlIK(const VectorXd &  Qinit_num,
      const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > body_point_num,
      const std::vector< Vector3d > target_pos_num,VectorXd & Qres_num);
     //according to this function, to know the number of each joint

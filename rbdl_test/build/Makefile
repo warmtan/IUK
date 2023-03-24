@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/robotflow/IUK/rbdl_test
+CMAKE_SOURCE_DIR = /home/robotflow/IOU/IUK/rbdl_test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/robotflow/IUK/rbdl_test/build
+CMAKE_BINARY_DIR = /home/robotflow/IOU/IUK/rbdl_test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robotflow/IUK/rbdl_test/build/CMakeFiles /home/robotflow/IUK/rbdl_test/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robotflow/IOU/IUK/rbdl_test/build/CMakeFiles /home/robotflow/IOU/IUK/rbdl_test/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/robotflow/IUK/rbdl_test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/robotflow/IOU/IUK/rbdl_test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named rbdltest
+# Target rules for targets named puma
 
 # Build rule for target.
-rbdltest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rbdltest
-.PHONY : rbdltest
+puma: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 puma
+.PHONY : puma
 
 # fast build rule for target.
-rbdltest/fast:
-	$(MAKE) -f CMakeFiles/rbdltest.dir/build.make CMakeFiles/rbdltest.dir/build
-.PHONY : rbdltest/fast
+puma/fast:
+	$(MAKE) -f CMakeFiles/puma.dir/build.make CMakeFiles/puma.dir/build
+.PHONY : puma/fast
 
 #=============================================================================
 # Target rules for targets named RBDL
@@ -135,19 +135,6 @@ RBDL: cmake_check_build_system
 RBDL/fast:
 	$(MAKE) -f CMakeFiles/RBDL.dir/build.make CMakeFiles/RBDL.dir/build
 .PHONY : RBDL/fast
-
-#=============================================================================
-# Target rules for targets named RobotModel
-
-# Build rule for target.
-RobotModel: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 RobotModel
-.PHONY : RobotModel
-
-# fast build rule for target.
-RobotModel/fast:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/build
-.PHONY : RobotModel/fast
 
 #=============================================================================
 # Target rules for targets named COMMON
@@ -174,33 +161,6 @@ URDF: cmake_check_build_system
 URDF/fast:
 	$(MAKE) -f CMakeFiles/URDF.dir/build.make CMakeFiles/URDF.dir/build
 .PHONY : URDF/fast
-
-MAIN.o: MAIN.cpp.o
-
-.PHONY : MAIN.o
-
-# target to build an object file
-MAIN.cpp.o:
-	$(MAKE) -f CMakeFiles/rbdltest.dir/build.make CMakeFiles/rbdltest.dir/MAIN.cpp.o
-.PHONY : MAIN.cpp.o
-
-MAIN.i: MAIN.cpp.i
-
-.PHONY : MAIN.i
-
-# target to preprocess a source file
-MAIN.cpp.i:
-	$(MAKE) -f CMakeFiles/rbdltest.dir/build.make CMakeFiles/rbdltest.dir/MAIN.cpp.i
-.PHONY : MAIN.cpp.i
-
-MAIN.s: MAIN.cpp.s
-
-.PHONY : MAIN.s
-
-# target to generate assembly for a file
-MAIN.cpp.s:
-	$(MAKE) -f CMakeFiles/rbdltest.dir/build.make CMakeFiles/rbdltest.dir/MAIN.cpp.s
-.PHONY : MAIN.cpp.s
 
 common_utils/common.o: common_utils/common.cpp.o
 
@@ -715,86 +675,32 @@ lib/urdf/tinyxmlparser.cpp.s:
 	$(MAKE) -f CMakeFiles/URDF.dir/build.make CMakeFiles/URDF.dir/lib/urdf/tinyxmlparser.cpp.s
 .PHONY : lib/urdf/tinyxmlparser.cpp.s
 
-model/DynModel.o: model/DynModel.cpp.o
+puma.o: puma.cpp.o
 
-.PHONY : model/DynModel.o
-
-# target to build an object file
-model/DynModel.cpp.o:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/DynModel.cpp.o
-.PHONY : model/DynModel.cpp.o
-
-model/DynModel.i: model/DynModel.cpp.i
-
-.PHONY : model/DynModel.i
-
-# target to preprocess a source file
-model/DynModel.cpp.i:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/DynModel.cpp.i
-.PHONY : model/DynModel.cpp.i
-
-model/DynModel.s: model/DynModel.cpp.s
-
-.PHONY : model/DynModel.s
-
-# target to generate assembly for a file
-model/DynModel.cpp.s:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/DynModel.cpp.s
-.PHONY : model/DynModel.cpp.s
-
-model/KinModel.o: model/KinModel.cpp.o
-
-.PHONY : model/KinModel.o
+.PHONY : puma.o
 
 # target to build an object file
-model/KinModel.cpp.o:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/KinModel.cpp.o
-.PHONY : model/KinModel.cpp.o
+puma.cpp.o:
+	$(MAKE) -f CMakeFiles/puma.dir/build.make CMakeFiles/puma.dir/puma.cpp.o
+.PHONY : puma.cpp.o
 
-model/KinModel.i: model/KinModel.cpp.i
+puma.i: puma.cpp.i
 
-.PHONY : model/KinModel.i
-
-# target to preprocess a source file
-model/KinModel.cpp.i:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/KinModel.cpp.i
-.PHONY : model/KinModel.cpp.i
-
-model/KinModel.s: model/KinModel.cpp.s
-
-.PHONY : model/KinModel.s
-
-# target to generate assembly for a file
-model/KinModel.cpp.s:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/KinModel.cpp.s
-.PHONY : model/KinModel.cpp.s
-
-model/RobotModel.o: model/RobotModel.cpp.o
-
-.PHONY : model/RobotModel.o
-
-# target to build an object file
-model/RobotModel.cpp.o:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/RobotModel.cpp.o
-.PHONY : model/RobotModel.cpp.o
-
-model/RobotModel.i: model/RobotModel.cpp.i
-
-.PHONY : model/RobotModel.i
+.PHONY : puma.i
 
 # target to preprocess a source file
-model/RobotModel.cpp.i:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/RobotModel.cpp.i
-.PHONY : model/RobotModel.cpp.i
+puma.cpp.i:
+	$(MAKE) -f CMakeFiles/puma.dir/build.make CMakeFiles/puma.dir/puma.cpp.i
+.PHONY : puma.cpp.i
 
-model/RobotModel.s: model/RobotModel.cpp.s
+puma.s: puma.cpp.s
 
-.PHONY : model/RobotModel.s
+.PHONY : puma.s
 
 # target to generate assembly for a file
-model/RobotModel.cpp.s:
-	$(MAKE) -f CMakeFiles/RobotModel.dir/build.make CMakeFiles/RobotModel.dir/model/RobotModel.cpp.s
-.PHONY : model/RobotModel.cpp.s
+puma.cpp.s:
+	$(MAKE) -f CMakeFiles/puma.dir/build.make CMakeFiles/puma.dir/puma.cpp.s
+.PHONY : puma.cpp.s
 
 # Help Target
 help:
@@ -804,14 +710,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... rbdltest"
+	@echo "... puma"
 	@echo "... RBDL"
-	@echo "... RobotModel"
 	@echo "... COMMON"
 	@echo "... URDF"
-	@echo "... MAIN.o"
-	@echo "... MAIN.i"
-	@echo "... MAIN.s"
 	@echo "... common_utils/common.o"
 	@echo "... common_utils/common.i"
 	@echo "... common_utils/common.s"
@@ -869,15 +771,9 @@ help:
 	@echo "... lib/urdf/tinyxmlparser.o"
 	@echo "... lib/urdf/tinyxmlparser.i"
 	@echo "... lib/urdf/tinyxmlparser.s"
-	@echo "... model/DynModel.o"
-	@echo "... model/DynModel.i"
-	@echo "... model/DynModel.s"
-	@echo "... model/KinModel.o"
-	@echo "... model/KinModel.i"
-	@echo "... model/KinModel.s"
-	@echo "... model/RobotModel.o"
-	@echo "... model/RobotModel.i"
-	@echo "... model/RobotModel.s"
+	@echo "... puma.o"
+	@echo "... puma.i"
+	@echo "... puma.s"
 .PHONY : help
 
 

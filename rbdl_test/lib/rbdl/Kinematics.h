@@ -12,6 +12,7 @@
 #include <assert.h>
 #include <iostream>
 #include "rbdl/Logging.h"
+#include "rbdl/Model.h"
 
 namespace RigidBodyDynamics {
 

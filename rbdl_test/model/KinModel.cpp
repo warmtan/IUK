@@ -37,8 +37,8 @@ void KinModel::UpdateKinematics(const VectorXd & q,
 bool KinModel::IK(const VectorNd &  Qinit_num,
 const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > & body_point_num,
 const std::vector< Vector3d > & target_pos_num,VectorNd & Qres_num ){
+    cout << "km1" <<endl;
     return InverseKinematics(*model_,Qinit_num,body_id_num,body_point_num, target_pos_num,Qres_num);
-
 }
 
 
@@ -252,7 +252,7 @@ void KinModel::getPos(int link_id, Vec3 & pos){
 
     pos = CalcBodyToBaseCoordinates(*model_, q, _find_body_idx(link_id), zero, false);
 
-    cout << pos << endl;
+    // cout << pos << endl;
     // R = CalcBodyWorldOrientation( *model_, q, _find_body_idx(link_id), false);
     // pos = R * pos;
 
@@ -405,14 +405,8 @@ unsigned int KinModel::find_body_id(const char* link_name) const{
 // 根据这个功能，要知道每个关节的数量
 void KinModel::displaylinks() {
     Vec3 a;
-    KinModel::find_body_id("base_link");
-    KinModel::getPos(2,a);
-    KinModel::getOri(2,a);
-    KinModel::getLinearVel(2,a);
     int linklist_len;
-    // cout << model_->GetBodyId("base_link") <<endl;
     linklist_len = sizeof(link_name)/sizeof(link_name[0]);
-    cout << "link_num: " << linklist_len << endl;
     vector<const char*> link_name_list(link_name, link_name + linklist_len);
     vector<int> body_id_list;
     int body_id;

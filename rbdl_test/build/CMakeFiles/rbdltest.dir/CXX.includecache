@@ -55,6 +55,8 @@ iostream
 -
 rbdl/Logging.h
 ../lib/rbdl/rbdl/Logging.h
+rbdl/Model.h
+../lib/rbdl/rbdl/Model.h
 
 ../lib/rbdl/Logging.h
 sstream
@@ -168,13 +170,7 @@ rbdl/rbdl_config.h
 rbdl/rbdl_math.h
 -
 
-/home/robotflow/IUK/rbdl_test/MAIN.cpp
-model/RobotModel.hpp
-/home/robotflow/IUK/rbdl_test/model/RobotModel.hpp
-common_utils/common.hpp
-/home/robotflow/IUK/rbdl_test/common_utils/common.hpp
-
-/home/robotflow/IUK/rbdl_test/common_utils/common.hpp
+/home/robotflow/IOU/IUK/rbdl_test/common_utils/common.hpp
 iostream
 -
 Eigen/Dense
@@ -182,15 +178,21 @@ Eigen/Dense
 rbdl/rbdl.h
 -
 
-/home/robotflow/IUK/rbdl_test/model/RobotDefinition.hpp
+/home/robotflow/IOU/IUK/rbdl_test/demo.cpp
+model/RobotModel.hpp
+/home/robotflow/IOU/IUK/rbdl_test/model/RobotModel.hpp
 common_utils/common.hpp
-/home/robotflow/IUK/rbdl_test/model/common_utils/common.hpp
+/home/robotflow/IOU/IUK/rbdl_test/common_utils/common.hpp
 
-/home/robotflow/IUK/rbdl_test/model/RobotModel.hpp
+/home/robotflow/IOU/IUK/rbdl_test/model/RobotDefinition.hpp
+common_utils/common.hpp
+/home/robotflow/IOU/IUK/rbdl_test/model/common_utils/common.hpp
+
+/home/robotflow/IOU/IUK/rbdl_test/model/RobotModel.hpp
 rbdl/rbdl.h
 -
 RobotDefinition.hpp
-/home/robotflow/IUK/rbdl_test/model/RobotDefinition.hpp
+/home/robotflow/IOU/IUK/rbdl_test/model/RobotDefinition.hpp
 
 /usr/include/eigen3/Eigen/Cholesky
 Core

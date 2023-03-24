@@ -1,4 +1,4 @@
-# Install script for directory: /home/robotflow/IUK/rbdl_test
+# Install script for directory: /home/robotflow/IOU/IUK/rbdl_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/robotflow/IUK/rbdl_test/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/robotflow/IOU/IUK/rbdl_test/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

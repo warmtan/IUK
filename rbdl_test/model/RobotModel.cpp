@@ -3,8 +3,9 @@
 #include "KinModel.hpp"
 #include <rbdl/urdfreader.h>
 #include <stdio.h>
+#include "RobotDefinition.hpp"
 
-#define THIS_COM "/home/robotflow/IUK/rbdl_test/urdf/"
+#define THIS_COM "/home/robotflow/IOU/IUK/rbdl_test/urdf/resources/"
 
 using namespace RigidBodyDynamics;
 using namespace RigidBodyDynamics::Math;
@@ -16,7 +17,7 @@ RobotModel::RobotModel(){
   rbdl_check_api_version (RBDL_API_VERSION);
 
   if (!Addons::URDFReadFromFile (
-              THIS_COM"flexiv.urdf", model_, true, true)) {
+              THIS_COM"flexiv_rizon4_kinematics.urdf", model_, true, true)) {
     std::cerr << "Error loading model flexiv.urdf" << std::endl;
     abort();
   }
@@ -24,13 +25,23 @@ RobotModel::RobotModel(){
   dyn_model_ = new DynModel(model_);
   kin_model_ = new KinModel(model_);
 
-  printf("[Aliengo Model] Contructed\n");
+  printf("[Flexiv Model] Contructed\n");
 }
 // 析构函数 它会在每次删除所创建的对象时执行
 RobotModel::~RobotModel(){
   delete dyn_model_;
   delete kin_model_;
   delete model_;
+}
+
+// bool RobotModel::RbdlIK (const Eigen::VectorXd &Qinit_num, const std::vector<unsigned int> &body_id_num, std::vector<Vector3d> body_point_num, const std::vector<Vector3d> target_pos_num, Eigen::VectorXd &Qres_num) const
+// {
+//   return kin_model_->IK(Qinit_num,body_id_num, body_point_num,target_pos_num,Qres_num);
+// }
+
+bool RobotModel::RbdlIK(const VectorXd &Qinit_num, const std::vector<unsigned int> &body_id_num, std::vector<Vector3d> body_point_num, const std::vector<Vector3d> target_pos_num, VectorXd &Qres_num)
+{
+  return kin_model_->IK(Qinit_num,body_id_num, body_point_num,target_pos_num,Qres_num);
 }
 
 // 输出link列表
@@ -46,19 +57,14 @@ unsigned int RobotModel:: FindLinkId(const char* _link_name) {
 // 
 void RobotModel::UpdateSystem(const VectorXd & q, 
         const VectorXd & qdot){
+  cout << "RM1" << endl;
   VectorXd qddot = qdot; qddot.setZero();
+  cout << "RM2" << endl;
   UpdateKinematicsCustom(*model_, &q, &qdot, &qddot);
   dyn_model_->UpdateDynamics(q, qdot);
   kin_model_->UpdateKinematics(q, qdot);
 }
 
-// RBDL IK
-void RobotModel::RbdlIK(const VectorXd &  Qinit_num,
-const std::vector< unsigned int > & body_id_num, std::vector<Vector3d > body_point_num,
-const std::vector< Vector3d > target_pos_num,VectorXd & Qres_num ){
-  kin_model_->IK(Qinit_num,body_id_num, body_point_num,target_pos_num,Qres_num);
-  // return false;
-}
 
 // 
 void RobotModel::getCentroidInertia(MatrixXd & Icent) const {

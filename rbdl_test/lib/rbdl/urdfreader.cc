@@ -30,6 +30,7 @@ typedef map<string, LinkPtr > URDFLinkMap;
 typedef map<string, JointPtr > URDFJointMap;
 
 bool construct_model (Model* rbdl_model, ModelPtr urdf_model, bool floating_base, bool verbose) {
+
   LinkPtr urdf_root_link;
 
   URDFLinkMap link_map;
@@ -88,18 +89,18 @@ bool construct_model (Model* rbdl_model, ModelPtr urdf_model, bool floating_base
 
     SpatialTransform root_joint_frame = SpatialTransform ();
 
-    if (verbose) {
-      cout << "+ Adding Root Body " << endl;
-      cout << "  joint frame: " << root_joint_frame << endl;
-      if (floating_base) {
-        cout << "  joint type : floating" << endl;
-      } else {
-        cout << "  joint type : fixed" << endl;
-      }
-      cout << "  body inertia: " << endl << root_link.mInertia << endl;
-      cout << "  body mass   : " << root_link.mMass << endl;
-      cout << "  body name   : " << root->name << endl;
-    }
+    // if (verbose) {
+    //   cout << "+ Adding Root Body " << endl;
+    //   cout << "  joint frame: " << root_joint_frame << endl;
+    //   if (floating_base) {
+    //     cout << "  joint type : floating" << endl;
+    //   } else {
+    //     cout << "  joint type : fixed" << endl;
+    //   }
+    //   cout << "  body inertia: " << endl << root_link.mInertia << endl;
+    //   cout << "  body mass   : " << root_link.mMass << endl;
+    //   cout << "  body name   : " << root->name << endl;
+    // }
 
     rbdl_model->AppendBody(root_joint_frame,
         root_joint,
@@ -126,12 +127,12 @@ bool construct_model (Model* rbdl_model, ModelPtr urdf_model, bool floating_base
       link_stack.push (link_map[cur_joint->child_link_name]);
       joint_index_stack.push(0);
 
-      if (verbose) {
-        for (unsigned int i = 1; i < joint_index_stack.size() - 1; i++) {
-          cout << "  ";
-        }
-        cout << "joint '" << cur_joint->name << "' child link '" << link_stack.top()->name << "' type = " << cur_joint->type << endl;
-      }
+      // if (verbose) {
+      //   for (unsigned int i = 1; i < joint_index_stack.size() - 1; i++) {
+      //     cout << "  ";
+      //   }
+      //   cout << "joint '" << cur_joint->name << "' child link '" << link_stack.top()->name << "' type = " << cur_joint->type << endl;
+      // }
 
       joint_names.push_back(cur_joint->name);
     } else {
@@ -238,18 +239,18 @@ bool construct_model (Model* rbdl_model, ModelPtr urdf_model, bool floating_base
 
     Body rbdl_body = Body (link_inertial_mass, link_inertial_position, link_inertial_inertia);
 
-    if (verbose) {
-      cout << "+ Adding Body: " << urdf_child->name << endl;
-      cout << "  parent_id  : " << rbdl_parent_id << endl;
-      cout << "  joint frame: " << rbdl_joint_frame << endl;
-      cout << "  joint dofs : " << rbdl_joint.mDoFCount << endl;
-      for (unsigned int j = 0; j < rbdl_joint.mDoFCount; j++) {
-        cout << "    " << j << ": " << rbdl_joint.mJointAxes[j].transpose() << endl;
-      }
-      cout << "  body inertia: " << endl << rbdl_body.mInertia << endl;
-      cout << "  body mass   : " << rbdl_body.mMass << endl;
-      cout << "  body name   : " << urdf_child->name << endl;
-    }
+    // if (verbose) {
+    //   cout << "+ Adding Body: " << urdf_child->name << endl;
+    //   cout << "  parent_id  : " << rbdl_parent_id << endl;
+    //   cout << "  joint frame: " << rbdl_joint_frame << endl;
+    //   cout << "  joint dofs : " << rbdl_joint.mDoFCount << endl;
+    //   for (unsigned int j = 0; j < rbdl_joint.mDoFCount; j++) {
+    //     cout << "    " << j << ": " << rbdl_joint.mJointAxes[j].transpose() << endl;
+    //   }
+    //   cout << "  body inertia: " << endl << rbdl_body.mInertia << endl;
+    //   cout << "  body mass   : " << rbdl_body.mMass << endl;
+    //   cout << "  body name   : " << urdf_child->name << endl;
+    // }
 
     if (urdf_joint->type == dynacore::urdf::Joint::FLOATING) {
       Matrix3d zero_matrix = Matrix3d::Zero();

@@ -48,9 +48,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/rbdltest.dir/DependInfo.cmake"
+  "CMakeFiles/puma.dir/DependInfo.cmake"
   "CMakeFiles/RBDL.dir/DependInfo.cmake"
-  "CMakeFiles/RobotModel.dir/DependInfo.cmake"
   "CMakeFiles/COMMON.dir/DependInfo.cmake"
   "CMakeFiles/URDF.dir/DependInfo.cmake"
   )

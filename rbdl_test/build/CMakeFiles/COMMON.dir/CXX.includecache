@@ -55,6 +55,8 @@ iostream
 -
 rbdl/Logging.h
 ../lib/rbdl/rbdl/Logging.h
+rbdl/Model.h
+../lib/rbdl/rbdl/Model.h
 
 ../lib/rbdl/Logging.h
 sstream
@@ -168,11 +170,11 @@ rbdl/rbdl_config.h
 rbdl/rbdl_math.h
 -
 
-/home/robotflow/IUK/rbdl_test/common_utils/common.cpp
+/home/robotflow/IOU/IUK/rbdl_test/common_utils/common.cpp
 common.hpp
-/home/robotflow/IUK/rbdl_test/common_utils/common.hpp
+/home/robotflow/IOU/IUK/rbdl_test/common_utils/common.hpp
 
-/home/robotflow/IUK/rbdl_test/common_utils/common.hpp
+/home/robotflow/IOU/IUK/rbdl_test/common_utils/common.hpp
 iostream
 -
 Eigen/Dense

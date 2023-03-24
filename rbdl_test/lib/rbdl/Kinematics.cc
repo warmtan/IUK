@@ -26,7 +26,7 @@ RBDL_DLLAPI void UpdateKinematics(
     const VectorNd &QDot,
     const VectorNd &QDDot) {
   LOG << "-------- " << __func__ << " --------" << std::endl;
-
+  std::cout << "km.cc" << std::endl;
   unsigned int i;
 
   model.a[0].setZero();
@@ -80,6 +80,7 @@ RBDL_DLLAPI void UpdateKinematicsCustom(
     const VectorNd *Q,
     const VectorNd *QDot,
     const VectorNd *QDDot) {
+  std::cout << "UpdateKinematicsCustom" << std::endl;
   LOG << "-------- " << __func__ << " --------" << std::endl;
 
   unsigned int i;
@@ -615,20 +616,24 @@ RBDL_DLLAPI bool InverseKinematics (
   assert (Qinit.size() == model.q_size);
   assert (body_id.size() == body_point.size());
   assert (body_id.size() == target_pos.size());
+  std::cout << "assert 结束" << std::endl;
 
   MatrixNd J = MatrixNd::Zero(3 * body_id.size(), model.qdot_size);
   VectorNd e = VectorNd::Zero(3 * body_id.size());
 
   Qres = Qinit;
-
+  std::cout << "Qres = Qinit 输出qinit" << Qinit<< std::endl;
   for (unsigned int ik_iter = 0; ik_iter < max_iter; ik_iter++) {
+    std::cout << "进入循环开始迭代" << std::endl;
     UpdateKinematicsCustom (model, &Qres, NULL, NULL);
 
     for (unsigned int k = 0; k < body_id.size(); k++) {
       MatrixNd G (MatrixNd::Zero(3, model.qdot_size));
       CalcPointJacobian (model, Qres, body_id[k], body_point[k], G, false);
+      std::cout << "InverseKinematics.cc for return" << std::endl;
       Vector3d point_base = 
         CalcBodyToBaseCoordinates (model, Qres, body_id[k], body_point[k], false);
+        std::cout << "下一步point_base.transpose出现问题" << point_base << std::endl;
       LOG << "current_pos = " << point_base.transpose() << std::endl;
 
       for (unsigned int i = 0; i < 3; i++) {
@@ -694,7 +699,7 @@ RBDL_DLLAPI bool InverseKinematics (
 
     LOG << "test_res = " << test_res.transpose() << std::endl;
   }
-
+  std::cout << "InverseKinematics.cc1 return" << std::endl;
   return false;
 }
 
